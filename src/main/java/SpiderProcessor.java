@@ -56,6 +56,8 @@ public class SpiderProcessor {
         }
       }
 
+
+
     } catch (IOException ioe) {
       logger.error("Could not process HTTP request for: " + nextUrl);
     }

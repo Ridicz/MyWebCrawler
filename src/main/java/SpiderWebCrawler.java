@@ -39,6 +39,8 @@ public class SpiderWebCrawler {
       List<String> acquiredLinksFromURL = spiderProcessor.getAcquiredLinksList();
 
       acquiredLinksFromURL.stream().filter(subsiteURL -> !websiteGraph.isWebsiteGraphContainsSubsite(subsiteURL)).forEach(this::addSubsiteToCompute);
+
+      websiteGraph.setSubsitesAccessibleFromGiven(actuallyProcessedPage, acquiredLinksFromURL);
     }
   }
 
@@ -49,5 +51,9 @@ public class SpiderWebCrawler {
 
   public int getSizeOfCreatedGraph() {
     return websiteGraph.getNumberOfAvailableSubsites();
+  }
+
+  public String getLinksFromMainPage() {
+    return websiteGraph.getSitesAccessibleFromMainPage();
   }
 }

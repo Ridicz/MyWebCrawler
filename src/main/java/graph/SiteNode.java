@@ -14,19 +14,17 @@ class SiteNode implements Comparable<SiteNode> {
     this.siteURL = siteURL;
   }
 
-//  public void addSiteAccessibleFromCurrent(SiteNode addedSiteNode) {
-//    siteAccessibleFromSiteList.add(addedSiteNode);
-//  }
+  public void addSiteAccessibleFromCurrent(String subsiteURL) {
+    siteAccessibleFromSiteList.add(subsiteURL);
+  }
 
   public void addSitesAccessibleFromCurrent(List<String> addedSubsites) {
-    //siteAccessibleFromSiteList.add(addedSiteNode);
-
     siteAccessibleFromSiteList = addedSubsites;
   }
 
-//  public List<SiteNode> getSiteAccessibleFromSiteList() {
-//    return siteAccessibleFromSiteList;
-//  }
+  public List<String> getSiteAccessibleFromSiteList() {
+    return siteAccessibleFromSiteList;
+  }
 
   public void setLengthFromMainPage(int lengthFromMainPage) {
     this.lengthFromMainPage = lengthFromMainPage;

@@ -54,7 +54,6 @@ public class WebsiteGraph {
     }
   }
 
-
   public boolean isWebsiteGraphContainsSubsite(String checkedSubsiteURL) {
     SiteNode siteNode = new SiteNode(checkedSubsiteURL);
 
@@ -63,5 +62,15 @@ public class WebsiteGraph {
 
   public int getNumberOfAvailableSubsites() {
     return siteNodeSet.size();
+  }
+
+  public String getSitesAccessibleFromMainPage() {
+    StringBuilder stringBuilder = new StringBuilder();
+
+    for (String subsiteURL : mainPage.getSiteAccessibleFromSiteList()) {
+      stringBuilder.append(subsiteURL).append("\n");
+    }
+
+    return stringBuilder.toString();
   }
 }
